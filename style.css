@@ -182,7 +182,7 @@ p {
     .testimonial {
       display: grid;
       grid-template-columns: repeat(1, 1fr);
-      grid-template-rows: 24rem 14rem 14rem 23rem 25rem;
+      grid-template-rows: 490px 270px 250px 460px 530px;
       grid-template-areas:
         "cardViolet-layout"
         "cardGray-layout"
