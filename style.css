@@ -1,10 +1,11 @@
 /* color */
 :root {
-  --VeryDarkMagenta: hsl(300, 43%, 22%);
-  --SoftPink: hsl(333, 80%, 67%);
-  --DarkGrayishMagenta: hsl(303, 10%, 53%);
-  --LightGrayishMagenta: hsl(300, 24%, 96%);
+  --Moderate-violet: hsl(263, 55%, 52%);
+  --Very-dark-grayish-blue: hsl(217, 19%, 35%);
+  --Very-dark-blackish-blue: hsl(219, 29%, 14%);
   --White: hsl(0, 0%, 100%);
+  --Light-gray: hsl(0, 0%, 81%);
+  --Light-grayish-blue: hsl(210, 46%, 95%);
 }
 
 /* global */
@@ -14,191 +15,183 @@
 }
 
 body {
-  background-color: var(--LightGrayishMagenta);
-  background:
-    url(images/bg-pattern-top-desktop.svg) left top no-repeat,
-    url(images/bg-pattern-bottom-desktop.svg) right bottom no-repeat;
-  background-clip: content-box;
-  font-family: 'Spartan', sans-serif;
-  font-size: 16px;
+  align-items: center;
+  background-color: var(--Light-grayish-blue);
+  color: var(--White);
+  display: flex;
+  flex-direction: column;
+  font-family: 'Barlow Semi Condensed', sans-serif;
+  justify-content: center;
+  min-height: 100vh;
 }
 
 /* container */
-.social-proof {
+.testimonial {
   display: grid;
-  grid-template-columns: repeat(6, 1fr);
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: repeat(2, 300px; );
   grid-template-areas:
-    "tittle tittle tittle rating rating rating"
-    "card1 card1 card2 card2 card3 card3";
-  grid-gap: 20px;
-  margin: 7% auto 5%;
-  width: 80%;
+    "cardViolet-layout cardViolet-layout cardGray-layout cardLight-layout"
+    "cardWhite-layout cardBlack-layout cardBlack-layout cardLight-layout";
+  grid-gap: 25px;
+  padding: 5% 15%;
 }
 
 /* card */
-.card-top {
-  color: var(--VeryDarkMagenta);
+.card-violet {
+  background-color: var(--Moderate-violet);
+  background-image: url(images/bg-pattern-quotation.svg);
+  background-position: 80% 0;
+  background-repeat: no-repeat;
+  grid-area: cardViolet-layout;
 }
 
-.card-bottom {
-  background-color: var(--VeryDarkMagenta);
-  border-radius: 10px;
-  color: var(--White);
-  margin: 2em auto;
-  position: relative;
+.card-gray {
+  background-color: var(--Very-dark-grayish-blue);
+  grid-area: cardGray-layout;
 }
 
-.card-bottom.card-1 {
-  grid-area: card1;
-  margin: 1em auto 3em;
+.card-white {
+  background-color: var(--White);
+  grid-area: cardWhite-layout;
 }
 
-.card-2 {
-  grid-area: card2;
+.card-black {
+  background-color: var(--Very-dark-blackish-blue);
+  grid-area: cardBlack-layout;
 }
 
-.card-3 {
-  grid-area: card3;
-  margin: 3em auto 1em;
+.card-light {
+  background-color: var(--White);
+  grid-area: cardLight-layout;
 }
 
-/* title related */
-.tittle-card {
-  margin-right: 5%;
-  grid-area: tittle;
+.card {
+  border-radius: 15px;
+  box-shadow: 8px 8px 5px -1px rgba(0, 0, 0, 0.08);
+  padding: 25px 30px;
 }
 
-.tittle-card h1 {
-  font-size: 3.5rem;
-  font-weight: 700;
-  margin-bottom: 1rem;
-}
-
-.tittle-card p {
-  color: var(--DarkGrayishMagenta);
-  font-size: 1.125rem;
-  font-weight: 400;
-  line-height: 1.3;
-}
-
-/* rating related */
-.rating-card {
-  display: flex;
-  flex-direction: column;
-  font-weight: 700;
-  font-size: 0.6rem;
-  grid-area: rating;
-  margin-left: 8%;
-}
-
-.rating-group {
-  border-radius: 10px;
-  background-color: var(--LightGrayishMagenta);
-  margin: 0 0 0 20%;
-  padding: 2em;
-  text-align: center;
-  margin: 5% 0 auto 20%;
-}
-
-.rating-1 {
-  margin: 5% 20% 0 0;
-}
-
-.rating-2 {
-  margin: 5% 10% 0;
-}
-
-.icon-group {
-  display: inline-flex;
-  margin-right: 1em;
-}
-
-.icon-group img {
-  margin-right: 5px;
-  width: 10%;
-}
-
-.rating-desc {
-  display: inline-flex;
-}
-
-/* testimonial related */
-.card-bottom div {
-  padding: 2rem 2rem 0;
-}
-
+/* photo related */
 .profile-photo {
   border-radius: 100%;
   float: left;
-  margin: 0 5% 0 0;
-  width: 10%;
-}
-
-.card-bottom p {
-  clear: both;
-  font-size: .7rem;
-  line-height: 2;
+  margin: 0 15px 15px 0;
   position: relative;
+  width: 30px;
 }
 
-div .testimonial {
-  padding: 2rem;
+.profile-border {
+  border: 2px solid var(--Moderate-violet);
 }
 
-.profile h2 {
-  font-size: 1rem;
-  font-weight: 500;
+.card-violet .profile-photo {
+  border: 2px solid var(--Light-gray);
 }
 
-.profile h3 {
-  color: var(--SoftPink);
-  opacity: 0.6;
-  font-size: 1rem;
+/* content related */
+h1 {
+  clear: both;
+  font-size: 1.25rem;
+  font-weight: 600;
+  margin: 15px auto;
+}
+
+h2 {
+  font-size: 0.875rem;
+  font-weight: 600;
+}
+
+h3, p {
+  opacity: 50%;
+  font-size: 0.75rem;
   font-weight: 400;
 }
 
-/* credit */
-.attribution {
-  margin-bottom: 20px;
+p {
+  opacity: 70%;
+  line-height: 1.5;
 }
 
-/* resposive */
-@media (max-width:768px) {
-  .social-proof {
-    grid-template-columns: 1fr;
+.card-text-black h1 {
+  color: var(--Very-dark-blackish-blue);
+}
+
+.card-text-white h1 {
+  color: var(--White);
+}
+
+.card-text-black h2 {
+  color: var(--Very-dark-blackish-blue);
+}
+
+.card-text-white h2 {
+  color: var(--White);
+}
+
+.card-text-black h3 {
+  color: var(--Very-dark-blackish-blue);
+  opacity: 50%;
+}
+
+.card-text-black p {
+  color: var(--Very-dark-blackish-blue);
+  opacity: 70%;
+}
+
+.card-text-white h3 {
+  color: var(--White);
+  opacity: 50%;
+}
+
+.card-text-white p {
+  color: var(--White);
+  opacity: 70%;
+}
+
+/* responsive */
+@media (max-width:1450px) {
+  .testimonial {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(3, 300px);
     grid-template-areas:
-      "tittle"
-      "rating"
-      "card1"
-      "card2"
-      "card3";
-    justify-content: center;
+      "cardViolet-layout cardViolet-layout cardGray-layout"
+      "cardWhite-layout cardBlack-layout cardBlack-layout"
+      "cardLight-layout cardLight-layout cardLight-layout";
+    grid-gap: 25px;
+    padding: 7% 15%;
   }
 
-  .tittle-card {
-    margin: 0;
-    text-align: center;
+  @media (max-width:1050px) {
+    .testimonial {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      grid-template-rows: repeat(4, 300px);
+      grid-template-areas:
+        "cardViolet-layout cardViolet-layout"
+        "cardWhite-layout cardGray-layout"
+        "cardBlack-layout cardBlack-layout"
+        "cardLight-layout cardLight-layout";
+      grid-gap: 25px;
+      padding: 7% 15%;
+    }
   }
 
-  .card-bottom.card-1 {
-    margin: 0;
+  @media (max-width:700px) {
+    .testimonial {
+      display: grid;
+      grid-template-columns: repeat(1, 1fr);
+      grid-template-rows: 490px 270px 250px 460px 530px;
+      grid-template-areas:
+        "cardViolet-layout"
+        "cardGray-layout"
+        "cardWhite-layout"
+        "cardBlack-layout"
+        "cardLight-layout";
+      grid-gap: 25px;
+      padding: 7% 15%;
+    }
   }
-
-  .card-3 {
-    margin: 0;
-  }
-
-  .rating-card {
-    margin-bottom: 8%;
-  }
-
-  .rating-card {
-    margin-left: 0;
-  }
-
-  .rating-group {
-    margin: 2em 0 0;
-  }
-}
 }
 
